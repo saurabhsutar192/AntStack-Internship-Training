@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Check Console!</h1>
+    <script>
+      function Var() {
+        console.log(
+          "-------- var:scope, redeclaration,reassignment-------------"
+        );
+
+        var b = 20;
+        console.log("Displaying 'var b' after definition");
+        console.log(b);
+        var b = 30;
+        console.log("Displaying 'var b' after redeclaration");
+        console.log(b);
+        b = 40;
+        console.log("Displaying 'var b' after reassignment");
+        console.log(b);
+
+        if (true) {
+          var i = 10;
+          console.log("Declaring & Displaying 'var i' inside ifStatement=" + i);
+        }
+        console.log("Displaying 'var i' outside ifStatement=" + i);
+        console.log("------------------------------------------------------");
+      }
+      Var();
+
+      function Let() {
+        console.log(
+          "-------- let:scope, redeclaration,reassignment-------------"
+        );
+
+        let a = 20;
+        console.log("Displaying 'let a' after definition");
+        console.log(a);
+        // let a = 30;
+        console.log("Displaying 'let a' after redeclaration");
+        console.error("code Breaks:syntax Error");
+
+        a = 40;
+        console.log("Displaying 'let a' after reassignment");
+        console.log(a);
+
+        if (true) {
+          let i = 10;
+          console.log("Declaring & Displaying 'let i' inside ifStatement=" + i);
+        }
+        console.log("Displaying 'let i' outside ifStatement=");
+        console.error("code Breaks:Reference Error");
+        console.log("------------------------------------------------------");
+      }
+      Let();
+      function Const() {
+        console.log(
+          "-------- const:scope, redeclaration,reassignment-------------"
+        );
+
+        const a = 20;
+        console.log("Displaying 'const a' after definition");
+        console.log(a);
+        // const a = 30;
+        console.log("Displaying 'const a' after redeclaration");
+        console.error("code Breaks:syntax Error");
+
+        // a = 40;
+        console.log("Displaying 'const a' after reassignment");
+        console.error("code Breaks:TypeError");
+
+        if (true) {
+          const i = 10;
+          console.log(
+            "Declaring & Displaying 'const i' inside ifStatement=" + i
+          );
+        }
+        console.log("Displaying 'const i' outside ifStatment=");
+        console.error("code Breaks:Reference Error");
+        console.log("------------------------------------------------------");
+      }
+      Const();
+    </script>
+  </body>
+</html>

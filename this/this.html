@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this</title>
+  </head>
+  <body>
+    <h1>Check Console</h1>
+    <script>
+      console.log("==================this inside program================");
+      console.log(this);
+      let object = {
+        fName: "Saurabh",
+        lName: "Sutar",
+        hobby: "Pianist",
+        marks: {
+          ssc: "88%",
+          hsc: "73%",
+        },
+        fullName: function () {
+          console.log(this);
+          console.log("using 'this': " + this.fName + " " + this.lName);
+        },
+        arrowFn: () => {
+          console.log(this);
+        },
+      };
+      console.log(
+        "==================this inside object method================"
+      );
+      object.fullName();
+      console.log(
+        "==================this inside arrow function================"
+      );
+      object.arrowFn();
+      console.log("==================this inside function================");
+      (function () {
+        console.log(this);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Check Console!</h1>
+    <script>
+      function Var() {
+        console.log("-------- var:Hoisting-------------");
+        console.log("Displaying 'var b' before definition=" + b);
+        var b = 20;
+        console.log("Displaying 'var b' after definition=" + b);
+        console.warn("var b is hoisted with the value 'undefined");
+        console.log("------------------------------------------------------");
+      }
+      Var();
+
+      function Let() {
+        console.log("-------- let & const:Hoisting-------------");
+        console.log("Displaying 'let a' before definition");
+        console.error("code breaks:referenceError");
+        let a = 20;
+        console.log("Displaying 'let a' after definition");
+        console.log(a);
+        console.warn("let a is hoisted without any value");
+      }
+      Let();
+    </script>
+  </body>
+</html>

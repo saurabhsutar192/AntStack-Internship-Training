@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <h1>Check Console</h1>
+    <script>
+      let object = {
+        fName: "Pradip",
+        lName: "Sutar",
+        hobby: "Pianist",
+        marks: {
+          ssc: "88%",
+          hsc: "73%",
+        },
+        fullName: function () {
+          console.log("Method invoked(function defined inside an Object)");
+          console.log("using 'this': " + this.fName + " " + this.lName);
+        },
+      };
+      console.log(object);
+      object.fName = "Saurabh";
+      console.log(`After updating`);
+      console.log(object);
+      object.fullName();
+      console.log(`After Deleting hobby`);
+      delete object.hobby;
+      console.log(object);
+      console.log("traversing into nested objects: " + object.marks.ssc);
+      console.log("=====================Object Methods===================");
+
+      let ob1 = {
+        a: 1,
+        b: 2,
+      };
+
+      let ob2 = {
+        b: 3,
+        c: 4,
+      };
+      console.log("assign");
+      console.log(Object.assign(ob1, ob2));
+
+      console.log("create");
+      let createdOb = Object.create(ob1);
+      createdOb.c = 5;
+      console.log(createdOb);
+
+      console.log("entries");
+      console.log(Object.entries(ob1));
+      for (let [key, value] of Object.entries(ob1)) {
+        console.log(`key: ${key}, value: ${value}`);
+      }
+
+      console.log("keys");
+      console.log(Object.keys(ob1));
+
+      console.log("values");
+      console.log(Object.values(ob1));
+    </script>
+  </body>
+</html>

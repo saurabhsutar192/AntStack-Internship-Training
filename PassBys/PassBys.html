@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PassBys</title>
+  </head>
+  <body>
+    <h1>Check Console</h1>
+    <script>
+      let a = 10;
+      let b = [1, 2, 3];
+      console.log("passByValue a: " + a);
+      console.log("passByReference b: " + b);
+      let c = b;
+      c.push(4);
+      console.log(
+        "after ONLY Updating c, also updates b as they have same reference"
+      );
+      console.log("passByReference c: " + c);
+      console.log("passByReference b: " + b);
+    </script>
+  </body>
+</html>

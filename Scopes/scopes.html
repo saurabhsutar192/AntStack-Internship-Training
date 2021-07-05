@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Check Console</h1>
+    <script>
+      let g = 2;
+      console.log(
+        "Calling function before its declaration, works because of function hoisting"
+      );
+      Scope()();
+      function Scope() {
+        console.log("Global Scope: " + g);
+        let n = 3;
+        if (true) {
+          var f = 5;
+          let b = 6;
+          console.log("Nested Scope:" + n);
+          console.log("Block Scope:" + b);
+        }
+        console.log("Function Scope:" + f);
+        return function () {
+          console.log("Closure");
+        };
+      }
+    </script>
+  </body>
+</html>

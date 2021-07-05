@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Check Console</h1>
+    <script>
+      let string1 = "My name is Saurabh.";
+      //   let string2 = "I am a Pianist.";
+
+      console.log("charAt: " + string1.charAt(4));
+      console.log("chartCodeAt: " + string1.charCodeAt(4));
+      console.log("concat: " + string1.concat("I am a Pianist"));
+      console.log(
+        "fromCharcode: " + String.fromCharCode(97, 98, 99, 123, 120, 121)
+      );
+      console.log("indexOf: " + string1.indexOf("Saurabh"));
+      console.log("indexOf: " + string1.indexOf("name", [5]));
+      console.log("lastIndOf: " + string1.lastIndexOf("Saurabh"));
+
+      let regex = /[0-9 -()+]+$/;
+
+      let number = "9998";
+      if (number.match(regex)) {
+        console.log(number + " is matched");
+      } else console.log("Not Matched");
+
+      console.log("search: " + number.search(regex));
+
+      console.log("replace: " + string1.replace("Saurabh", "Chord"));
+      console.log("slice: " + string1.slice(2, 7));
+      console.log("split: " + string1.split(" "));
+      console.log("substr: " + string1.substr(2, 9));
+      console.log("substring: " + string1.substring(2, 7));
+      console.log("toLowerCase: " + string1.toLowerCase());
+      console.log("toUpperCase: " + string1.toUpperCase());
+      console.log("includes: " + string1.includes("Saurabh"));
+      console.log("endsWith: " + string1.endsWith("Saurabh"));
+      console.log("repeat: " + string1.repeat(2));
+      console.log("valueOf: " + string1.valueOf());
+      console.log("trim: " + string1.trim());
+    </script>
+  </body>
+</html>

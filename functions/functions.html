@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Check Console</h1>
+    <script>
+      let functionExpression = function () {
+        console.log("FunctionExpression");
+      };
+      functionExpression();
+
+      (function () {
+        console.log("Immediately Invoked Function Expression(IIFE)");
+      })();
+
+      let object = {
+        name: "Saurabh",
+        arrowFunction: () => {
+          console.log("arrowFunction: " + this.name);
+        },
+        regularFunction() {
+          console.log("regularFunction: " + this.name);
+        },
+      };
+      object.regularFunction();
+      object.arrowFunction();
+      (function () {
+        console.log("IIFE & Anonymous Function: " + object.name);
+      })();
+
+      function callback() {
+        console.log("callback executed");
+      }
+
+      function caller(callback) {
+        console.log("Higher Order Function");
+        console.log("Function as an argument");
+        callback();
+      }
+      caller(callback);
+
+      let LS = "lexical Scope";
+
+      (function () {
+        console.log(LS);
+      })();
+
+      function returnFunction() {
+        console.log("function as a return value");
+      }
+
+      (function () {
+        return returnFunction();
+      })();
+
+      function printName(method) {
+        console.log(method + " method: " + this.name);
+      }
+
+      printName.call(object, "call");
+      printName.apply(object, ["apply"]);
+
+      let name = printName.bind(object, "bind");
+      name();
+    </script>
+  </body>
+</html>
