@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+  </head>
+  <body>
+    <h1>Check Console</h1>
+    <p class="data">...loading</p>
+    <button class="btn">Fetch</button>
+    <p class="fetchedData"></p>
+    <script>
+      let xhr = new XMLHttpRequest();
+      let data = document.querySelector(".data");
+      console.log(xhr);
+      xhr.open("GET", "ajax.txt", true);
+
+      xhr.onload = function () {
+        if (this.status === 200) {
+          console.log(this.responseText);
+          data.innerHTML = this.responseText;
+        } else {
+          console.log(this.status);
+        }
+      };
+
+      xhr.send();
+
+      let fetchedData = document.querySelector(".fetchedData");
+
+      document.querySelector(".btn").addEventListener("click", () => {
+        fetchedData.innerHTML = "loading";
+        fetch("ajax2.txt")
+          .then((r) => r.text())
+          .then((t) => {
+            let string = t;
+            fetch("ajax.txt")
+              .then((r) => r.text())
+              .then((t) => {
+                string += t;
+                fetchedData.innerHTML = string;
+              });
+          });
+      });
+    </script>
+  </body>
+</html>
