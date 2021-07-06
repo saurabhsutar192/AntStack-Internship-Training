@@ -47,6 +47,8 @@
 
       console.log("============ OOP ============");
 
+      console.log("============ Constructors ============");
+
       class example {
         constructor(a, b) {
           this.prop1 = a;
@@ -60,6 +62,19 @@
 
       let constr1 = new example("constructor", 2);
       constr1.f1();
+
+      console.log("=====Prototype and Prototypal Inheritance =======");
+
+      let object2 = {
+        name: "Pradip",
+      };
+
+      console.log("prototype of object2");
+      console.log(object2.__proto__);
+
+      object2.__proto__ = object; //Not advisable
+      console.log("Object 2 inherits from Object");
+      console.log(object2.pn);
 
       console.log("============ setters and getters ============");
       object.email = "email@gmail.com";
