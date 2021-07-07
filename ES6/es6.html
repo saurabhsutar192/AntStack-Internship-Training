@@ -8,13 +8,20 @@
   </head>
   <body>
     <h1>Check Console</h1>
-    <h3>x</h3>
+
     <script>
       console.log("============ array methods chain ============");
       let array = [1, 2, 3, 4, 5, 6, 7];
       let object = {
         name: "saurabh",
         pn: "1234",
+        hobby: "Pianist",
+        get getHobby() {
+          return this.hobby;
+        },
+        set setHobby(hobby) {
+          this.hobby = hobby;
+        },
       };
 
       array
@@ -77,12 +84,12 @@
       console.log(object2.pn);
 
       console.log("============ setters and getters ============");
-      object.email = "email@gmail.com";
-      console.log("after setting email");
-      console.log(object);
+      console.log("after getting hobby");
+      console.log(object.getHobby);
 
-      let h3 = document.querySelector("h3");
-      h3.innerHTML = "Getter";
+      object.setHobby = "Gaming";
+      console.log("after setting hobby");
+      console.log(object);
     </script>
   </body>
 </html>
